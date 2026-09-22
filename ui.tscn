@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://chxf4h2yk6rrc"]
+
+[ext_resource type="Script" uid="uid://4ahmfx06w0cs" path="res://hud.gd" id="1_fyqef"]
+
+[sub_resource type="Gradient" id="Gradient_xb563"]
+offsets = PackedFloat32Array(0.23033708, 0.4550562, 0.8651685)
+colors = PackedColorArray(2.4065375e-07, 0.5080692, 0.4703989, 1, 0, 0.50980395, 0.47058824, 1, 0, 0.50980395, 0.47058824, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fyqef"]
+gradient = SubResource("Gradient_xb563")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("1_fyqef")
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+offset_right = 1151.0
+offset_bottom = 649.0
+texture = SubResource("GradientTexture1D_fyqef")
+
+[node name="Headline" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.0
+offset_top = 89.0
+offset_right = 195.0
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 85
+text = "You Died!"
+metadata/_edit_use_anchors_ = true
+
+[node name="StartButton" type="Button" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -246.0
+offset_right = 179.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "Restart"
+metadata/_edit_use_anchors_ = true
